@@ -1,6 +1,7 @@
 import { Component } from "react";
 import "./App.css"
 import elephant from "./images/elephant.jpeg";
+import "./style.css"
 
 export default class AppClass extends Component{
   
@@ -25,6 +26,27 @@ export default class AppClass extends Component{
     ]
     return data;
   }
+
+
+  render(){
+
+    const data = this.imageData()
+    return <div >
+      <h1 style={{textAlign:"center"}}>Kalvium Galary</h1>
+<div className='main-container'>
+  
+{
+  data.map((ele, idx, data)=>{
+    return <div key={ele.id}>
+      <img src={ele.img} />
+    </div>
+  })
+}
+</div>
+
+    </div>
+  }
+
 
   // code here
 }
